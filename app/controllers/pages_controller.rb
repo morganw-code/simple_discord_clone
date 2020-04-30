@@ -3,6 +3,7 @@ class PagesController < ApplicationController
     
     def index
         @message = Message.new
+        @messages = Message.all
     end
 
     def settings

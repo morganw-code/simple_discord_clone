@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get "/settings", to: "pages#settings", as: "settings"
 
   get "/messages", to: "messages#index", as: "messages"
+  post "/messages", to: "messages#create"
 end

@@ -6,15 +6,19 @@
     <div class="grid-item item2">
         <div class="channel-nav-flex">
             <div class="user-controls-flex">
+                <div class="user-image">
+                    <%= image_tag "default_image.png", alt: "profile image", class: "profile-image" %>
+                </div>
+
                 <div class="user-tag">
                     <%= current_user.email.split("@")[0] %>
                 </div>
 
-                <div class="user-tag">
+                <div class="user-settings">
                     <%= button_to "settings", settings_path, method: "get", class: "settings-button" %>
                 </div>
 
-                <div class="user-tag">
+                <div class="user-logout">
                     <%= link_to "logout", destroy_user_session_path, method: :delete %>
                 </div>
             </div>
@@ -24,15 +28,32 @@
     <div class="grid-item item3">
         <div class="message-area-grid">
             <div class="message-area-item item1">
-                <p>Discord Clone Test Server</p>
+                <p>Very lonely server</p>
             </div>
 
             <div class="message-area-item item2">
-            
+                <% for message in @messages %>
+                    <div class="message-grid">
+                        <div class="message-grid-item image">
+                            <%= image_tag "default_image.png", alt: "profile image", class: "profile-image" %>
+                        </div>
+                        <div class="message-grid-item-flex">
+                            <div class="flex-item name">
+                                <%= message.user.email.split("@")[0] %>
+                            </div>
+                            <div class="flex-item message">
+                                <%= message.message %>
+                            </div>
+                        </div>
+                        <div class="message-grid-item date">
+                            <%= message.created_at %>
+                        </div>
+                    </div>
+                <% end %>
             </div>
 
             <div class="message-area-item item3">
-                <%= form_with model: @message, local: true do |form| %>
+                <%= form_with model: @message, local: true, html: { autocomplete: "off" } do |form| %>
                     <%= form.text_field :message, placeholder: "type a message here", class: "text-field-box" %>
                 <% end %>
             </div>

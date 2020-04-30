@@ -45,6 +45,7 @@ body {
     padding: 1em;
     background-color: #292B2F;
     align-items: center;
+    color: #FFFFFF;
 }
 
 .settings-button {
@@ -59,7 +60,7 @@ body {
 }
 
 .message-area-item.item1 {
-    box-shadow: 0 5px #303237;
+    box-shadow: 0 2px #303237;
 }
 
 .message-area-item:first-child {
@@ -77,4 +78,44 @@ body {
     border: 1px solid #292B2F;
     padding: 0.5em;
     color: #DCDDDE7F;
+}
+
+.message-grid {
+    display: grid;
+    grid-template-columns: 1fr 15fr;
+    grid-column-gap: 1em;
+}
+
+.message-grid-item {
+    width: 100%;
+}
+
+.profile-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.message-grid-item-flex {
+    width: 100%;
+    height: 100%;
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    color: #DCDDDE;
+}
+
+.message-grid-item-flex > .flex-item.message {
+    margin-top: auto;
+}
+
+.message-grid-item.name {
+    color: #FFFFFF;
+}
+
+.message-grid > .message-grid-item.date {
+    grid-column: 1 / span 2;
+    text-align: center;
+    color: #DCDDDE7F;
+    font-size: small;
 }
