@@ -4,13 +4,39 @@
     </div>
 
     <div class="grid-item item2">
-        <div class="user-controls-flex">
-            <%= button_to "settings", settings_path, method: "get", class: "settings-button" %>
+        <div class="channel-nav-flex">
+            <div class="user-controls-flex">
+                <div class="user-tag">
+                    <%= current_user.email.split("@")[0] %>
+                </div>
+
+                <div class="user-tag">
+                    <%= button_to "settings", settings_path, method: "get", class: "settings-button" %>
+                </div>
+
+                <div class="user-tag">
+                    <%= link_to "logout", destroy_user_session_path, method: :delete %>
+                </div>
+            </div>
         </div>
     </div>
 
     <div class="grid-item item3">
-    
+        <div class="message-area-grid">
+            <div class="message-area-item item1">
+                <p>Discord Clone Test Server</p>
+            </div>
+
+            <div class="message-area-item item2">
+            
+            </div>
+
+            <div class="message-area-item item3">
+                <%= form_with model: @message, local: true do |form| %>
+                    <%= form.text_field :message, placeholder: "type a message here", class: "text-field-box" %>
+                <% end %>
+            </div>
+        </div>
     </div>
 
     <div class="grid-item item4">
