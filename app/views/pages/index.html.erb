@@ -12,6 +12,8 @@
 
                 <div class="user-tag">
                     <%= current_user.email.split("@")[0] %>
+                    <br>
+                    #1337
                 </div>
 
                 <div class="user-settings">
@@ -19,7 +21,7 @@
                 </div>
 
                 <div class="user-logout">
-                    <%= link_to "logout", destroy_user_session_path, method: :delete %>
+                    <%= button_to "logout", destroy_user_session_path, method: "get", class: "logout-button" %>
                 </div>
             </div>
         </div>
@@ -39,7 +41,7 @@
                         </div>
                         <div class="message-grid-item-flex">
                             <div class="flex-item name">
-                                <%= message.user.email.split("@")[0] %>
+                                <%= message.user.email.split("@").first %>
                             </div>
                             <div class="flex-item message">
                                 <%= message.message %>

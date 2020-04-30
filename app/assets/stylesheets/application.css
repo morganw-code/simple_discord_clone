@@ -41,7 +41,7 @@ body {
     display: flex;
     flex-direction: row;
     align-self: flex-end;
-    justify-content: space-evenly;
+    justify-content: space-between;
     padding: 1em;
     background-color: #292B2F;
     align-items: center;
@@ -72,7 +72,7 @@ body {
 
 .text-field-box {
     width: 100%;
-    height: 3em;
+    height: 3.3333em;
     background-color: #40444B;
     border-radius: 1em;
     border: 1px solid #292B2F;
@@ -118,4 +118,18 @@ body {
     text-align: center;
     color: #DCDDDE7F;
     font-size: small;
+}
+
+.message-grid:hover  {
+    background-color: rgba(1, 1, 1, 0.1);
+    transition: 1s;
+}
+
+.settings-button, .logout-button {
+    border: 1px solid #292B2F;
+    border-radius: 5px;
+    width: 4em;
+    height: 2em;
+    background-color: #40444B;
+    color: #DCDDDE7F;
 }
