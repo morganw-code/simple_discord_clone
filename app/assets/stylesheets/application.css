@@ -131,7 +131,7 @@ body {
     font-size: small;
 }
 
-.message-grid:hover, .user-list-item:hover  {
+.message-grid:hover, .user-list-item:hover, .message-image:hover  {
     background-color: rgba(1, 1, 1, 0.1);
 }
 

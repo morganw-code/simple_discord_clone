@@ -53,7 +53,7 @@
                     </div>
 
                     <% if message.message.include?("https") %>
-                        <div class="user-image">
+                        <div class="message-image">
                             <%= image_tag message.message[/(https?:\/\/.*\.(?:png|jpg|gif))/i, 0], alt: "image" %>
                         </div>
                     <% end %>
