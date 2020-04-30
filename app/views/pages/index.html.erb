@@ -51,6 +51,12 @@
                             <%= message.created_at %>
                         </div>
                     </div>
+
+                    <% if message.message.include?("https") %>
+                        <div class="user-image">
+                            <%= image_tag message.message[/(https?:\/\/.*\.(?:png|jpg|gif))/i, 0], alt: "image" %>
+                        </div>
+                    <% end %>
                 <% end %>
             </div>
             <div class="message-area-item item3">

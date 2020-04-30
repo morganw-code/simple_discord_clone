@@ -31,6 +31,10 @@ body {
     padding: 1em;
 }
 
+.grid-item.item3 {
+    overflow-y: hidden;
+}
+
 .channel-nav-flex {
     display: flex;
     flex-direction: row;
@@ -69,6 +73,7 @@ body {
 
 .message-area-item.item2 {
     padding: 1em 1em 0 1em;
+    overflow-y: auto;
 }
 
 .message-area-item.item3 {
