@@ -5,4 +5,5 @@ Rails.application.routes.draw do
 
   get "/messages", to: "messages#index", as: "messages"
   post "/messages", to: "messages#create"
+  get "/messages/nuke", to: "messages#nuke", as: "messages_nuke"
 end

@@ -16,6 +16,11 @@ class MessagesController < ApplicationController
     
     end
 
+    def nuke
+        Message.delete_all
+        redirect_to "/"
+    end
+
     private
 
     def message_params

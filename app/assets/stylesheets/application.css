@@ -10,7 +10,6 @@ body {
 
 .grid {
     display: grid;
-    border-style: solid;
     grid-template-columns: 0.25fr 1fr 3fr 1fr;
     width: 100vw;
     height: 100vh;
@@ -26,7 +25,10 @@ body {
 
 .grid-item:nth-child(3) {
     background-color: #36393F;
-    padding: 0 1em 0em 1em;
+}
+
+.grid-item:nth-child(4) {
+    padding: 1em;
 }
 
 .channel-nav-flex {
@@ -48,11 +50,6 @@ body {
     color: #FFFFFF;
 }
 
-.settings-button {
-    border: 1px solid blue;
-    float: right;
-}
-
 .message-area-grid {
     display: grid;
     grid-template-rows: 1fr 10fr 1fr;
@@ -60,14 +57,22 @@ body {
 }
 
 .message-area-item.item1 {
-    box-shadow: 0 2px #303237;
-}
-
-.message-area-item:first-child {
-    padding: 1em;
-    margin: auto;
+    height: 100%;
     width: 100%;
     color: #DCDDDE7F;
+    box-shadow: 0 2px #303237;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1em;
+}
+
+.message-area-item.item2 {
+    padding: 1em 1em 0 1em;
+}
+
+.message-area-item.item3 {
+    padding: 0 1em;
 }
 
 .text-field-box {
@@ -82,7 +87,7 @@ body {
 
 .message-grid {
     display: grid;
-    grid-template-columns: 1fr 15fr;
+    grid-template-columns: 1fr 20fr;
     grid-column-gap: 1em;
 }
 
@@ -91,9 +96,10 @@ body {
 }
 
 .profile-image {
-    width: 50px;
-    height: 50px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
+    border: 2px solid #DCDDDE7F;
 }
 
 .message-grid-item-flex {
@@ -120,9 +126,8 @@ body {
     font-size: small;
 }
 
-.message-grid:hover  {
+.message-grid:hover, .user-list-item:hover  {
     background-color: rgba(1, 1, 1, 0.1);
-    transition: 1s;
 }
 
 .settings-button, .logout-button {
@@ -132,4 +137,37 @@ body {
     height: 2em;
     background-color: #40444B;
     color: #DCDDDE7F;
+}
+
+.settings-button:hover, .logout-button:hover {
+    color: #40444B;
+    background-color: #DCDDDE7F;
+    transition: 0.2s;
+}
+
+.user-list-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-list-flex > .user-list-item {
+    display: flex;
+    width: 100%;
+    color: #DCDDDE7F;
+}
+
+.destroy-button {
+    border: 1px solid #292B2F;
+    border-radius: 5px;
+    width: 4em;
+    height: 2em;
+    background-color: #ED2939;
+    color: #FFFFFF;
+    font-size: 1em;
+}
+
+.destroy-button:hover {
+    color: #ED2939;
+    background-color: #FFFFFF;
+    transition: 0.2s;
 }

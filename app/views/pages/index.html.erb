@@ -2,37 +2,37 @@
     <div class="grid-item item1">
 
     </div>
-
     <div class="grid-item item2">
         <div class="channel-nav-flex">
             <div class="user-controls-flex">
                 <div class="user-image">
                     <%= image_tag "default_image.png", alt: "profile image", class: "profile-image" %>
                 </div>
-
                 <div class="user-tag">
                     <%= current_user.email.split("@")[0] %>
                     <br>
                     #1337
                 </div>
-
                 <div class="user-settings">
                     <%= button_to "settings", settings_path, method: "get", class: "settings-button" %>
                 </div>
-
                 <div class="user-logout">
-                    <%= button_to "logout", destroy_user_session_path, method: "get", class: "logout-button" %>
+                    <%= button_to "logout", destroy_user_session_path, method: "delete", class: "logout-button" %>
                 </div>
             </div>
         </div>
     </div>
-
     <div class="grid-item item3">
         <div class="message-area-grid">
             <div class="message-area-item item1">
-                <p>Very lonely server</p>
+                <div>
+                    <p>Very lonely server</p>
+                </div>
+                
+                <div>
+                    <%= button_to "NUKE", messages_nuke_path, method: "get", class: "destroy-button" %>
+                </div>
             </div>
-
             <div class="message-area-item item2">
                 <% for message in @messages %>
                     <div class="message-grid">
@@ -53,7 +53,6 @@
                     </div>
                 <% end %>
             </div>
-
             <div class="message-area-item item3">
                 <%= form_with model: @message, local: true, html: { autocomplete: "off" } do |form| %>
                     <%= form.text_field :message, placeholder: "type a message here", class: "text-field-box" %>
@@ -61,8 +60,20 @@
             </div>
         </div>
     </div>
-
     <div class="grid-item item4">
-    
+        <div class="user-list-flex">
+            <p style="color: #FFFFFF;">MEMBERS - <%= @users.count %></p>
+            <% for user in @users %>
+                <div class="user-list-item">
+                    <div class="user-image">
+                        <%= image_tag "default_image.png", alt: "profile image", class: "profile-image" %>
+                    </div>
+
+                    <div class="user-tag">
+                        <%= user.email.split("@")[0] %>#1337
+                    </div>
+                </div>
+            <% end %>
+        </div>
     </div>
 </div>
