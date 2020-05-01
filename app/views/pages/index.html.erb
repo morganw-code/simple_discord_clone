@@ -1,9 +1,9 @@
 <div class="grid">
     <div class="grid-item item1">
-
     </div>
     <div class="grid-item item2">
         <div class="channel-nav-flex">
+            <div class="p5-canvas-holder" id="p5-canvas-holder"></div>
             <div class="user-controls-flex">
                 <div class="user-image">
                     <%= image_tag "default_image.png", alt: "profile image", class: "profile-image" %>
@@ -54,7 +54,7 @@
 
                     <% if message.message.match(/(https?:\/\/.*\.(?:png|jpg|gif))/i) %>
                         <div class="message-image">
-                            <%= image_tag message.message[/(https?:\/\/.*\.(?:png|jpg|gif))/i, 0], alt: "image" %>
+                            <%= image_tag message.message[/(https?:\/\/.*\.(?:png|jpg|gif))/i, 0], alt: "image", class: "message-media" %>
                         </div>
                     <% end %>
                 <% end %>

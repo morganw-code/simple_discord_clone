@@ -37,7 +37,8 @@ body {
 
 .channel-nav-flex {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: space-between;
     height: 100%;
 }
 
@@ -46,7 +47,6 @@ body {
     height: 10%;
     display: flex;
     flex-direction: row;
-    align-self: flex-end;
     justify-content: space-between;
     padding: 1em;
     background-color: #292B2F;
@@ -92,7 +92,7 @@ body {
 
 .message-grid {
     display: grid;
-    grid-template-columns: 1fr 20fr;
+    grid-template-columns: 1fr 15fr;
     grid-column-gap: 1em;
 }
 
@@ -175,4 +175,14 @@ body {
     color: #ED2939;
     background-color: #FFFFFF;
     transition: 0.2s;
+}
+
+.message-media {
+    border-radius: 1em;
+    max-width: 320px;
+    max-height: 240px;
+}
+
+#p5-canvas-holder, .channel-nav-flex {
+    border: 1px solid red;
 }
