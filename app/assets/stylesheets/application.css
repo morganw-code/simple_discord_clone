@@ -38,8 +38,8 @@ body {
 .channel-nav-flex {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     height: 100%;
+    justify-content: space-between;
 }
 
 .channel-nav-flex > .user-controls-flex {
@@ -183,6 +183,7 @@ body {
     max-height: 240px;
 }
 
-#p5-canvas-holder, .channel-nav-flex {
-    border: 1px solid red;
+#p5-canvas-holder {
+    width: 100%;
+    height: 100%;
 }
