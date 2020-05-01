@@ -8,7 +8,7 @@ class MessagesController < ApplicationController
         if @message.errors.any?
             render plain: "error"
         else
-            redirect_to "/"
+            redirect_to root_path
         end
     end
 
@@ -18,7 +18,7 @@ class MessagesController < ApplicationController
 
     def nuke
         Message.delete_all
-        redirect_to "/"
+        redirect_to root_path
     end
 
     private

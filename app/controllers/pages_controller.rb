@@ -8,5 +8,6 @@ class PagesController < ApplicationController
     end
 
     def settings
+        render plain: "woek"
     end
 end

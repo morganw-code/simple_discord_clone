@@ -52,7 +52,7 @@
                         </div>
                     </div>
 
-                    <% if message.message.include?("https") %>
+                    <% if message.message.match(/(https?:\/\/.*\.(?:png|jpg|gif))/i) %>
                         <div class="message-image">
                             <%= image_tag message.message[/(https?:\/\/.*\.(?:png|jpg|gif))/i, 0], alt: "image" %>
                         </div>
